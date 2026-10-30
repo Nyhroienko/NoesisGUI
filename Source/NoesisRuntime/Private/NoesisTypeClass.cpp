@@ -3007,7 +3007,7 @@ void NoesisFillTypeClassForUStruct(NoesisTypeClass* TypeClass, UScriptStruct* Cl
 	{
 		FProperty* Property = *PropertyIt;
 		FString PropertyName = Property->GetName();
-		if (!(Class->StructFlags & STRUCT_Native))
+		if (Class->IsA<UUserDefinedStruct>())
 		{
 			int32 UnderscorePosition = INDEX_NONE;
 			ensure(PropertyName.FindLastChar(TEXT('_'), UnderscorePosition));
