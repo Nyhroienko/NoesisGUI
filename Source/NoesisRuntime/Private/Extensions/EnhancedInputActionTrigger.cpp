@@ -118,6 +118,11 @@ void EnhancedInputActionTrigger::UnregisterAction()
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void EnhancedInputActionTrigger::OnInputAction()
 {
+    if (mInstance != nullptr && !mInstance->EnableActions)
+    {
+        return;
+    }
+
     InvokeActions(nullptr);
 }
 
