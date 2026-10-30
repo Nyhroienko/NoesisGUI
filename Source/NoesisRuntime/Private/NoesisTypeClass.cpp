@@ -74,6 +74,7 @@
 	#include "Interfaces/IPluginManager.h"
 	#include "AssetRegistry/AssetData.h"
 	#include "NoesisSettings.h"
+	#include <NsGui/Studio.h>
 #endif
 
 DECLARE_CYCLE_STAT(TEXT("NoesisNotifyPropertyChanged"), STAT_NoesisNotifyPropertyChanged, STATGROUP_Noesis);

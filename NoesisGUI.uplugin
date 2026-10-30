@@ -37,7 +37,7 @@
 		},
 		{
 			"Name": "CommonUI",
-			"Enabled": false
+			"Enabled": true
 		}
 	]
 }

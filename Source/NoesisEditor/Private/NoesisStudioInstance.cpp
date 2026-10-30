@@ -26,6 +26,9 @@
 // AssetRegistry includes
 #include "AssetRegistry/AssetData.h"
 
+// Noesis includes
+#include <NsGui/Studio.h>
+
 // Slate includes
 #include "Widgets/SWindow.h"
 #include "Framework/Application/SlateApplication.h"
