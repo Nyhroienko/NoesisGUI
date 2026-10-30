@@ -87,6 +87,7 @@ void EnhancedInputActionTrigger::RegisterAction()
         {
             const Noesis::Uri& ActionUri = GetAction();
             FString ActionPath = NsProviderUriToAssetPath(ActionUri);
+            ActionPath += TEXT(".") + FPackageName::GetShortName(ActionPath);
             UInputAction* Action = FindObject<UInputAction>(nullptr, *ActionPath);
             ETriggerEvent TriggerEvent = (ETriggerEvent)GetTriggerEvent();
             if (Action == nullptr)
