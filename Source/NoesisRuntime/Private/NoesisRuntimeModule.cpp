@@ -877,7 +877,9 @@ public:
 
 		Noesis::GUI::SetErrorHandler(&NoesisErrorHandler);
 #if UE_BUILD_SHIPPING + UE_BUILD_SHIPPING_WITH_EDITOR == 0
+#if NO_LOGGING == 0
 		Noesis::GUI::SetLogHandler(&NoesisLogHandler);
+#endif
 #else
 		Noesis::GUI::DisableHotReload();
 		Noesis::GUI::DisableInspector();
