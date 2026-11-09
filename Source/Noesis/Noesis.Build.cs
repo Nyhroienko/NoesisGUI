@@ -76,8 +76,14 @@ public class Noesis : ModuleRules
 			// Core Noesis
 			PublicAdditionalLibraries.Add(Path.Combine(NoesisBasePath, "Lib", "windows_x86_64", "Noesis.lib"));
 			string NoesisDllPath = Path.Combine(NoesisBasePath, "Bin", "windows_x86_64", "Noesis.dll");
-			RuntimeDependencies.Add(Path.Combine(PluginDir, "Noesis.dll"), NoesisDllPath, StagedFileType.NonUFS);
-			RuntimeDependencies.Add(Path.Combine("$(TargetOutputDir)", "Noesis.dll"), NoesisDllPath, StagedFileType.NonUFS);
+			if (Target.LinkType == TargetLinkType.Monolithic)
+			{
+				RuntimeDependencies.Add(Path.Combine("$(TargetOutputDir)", "Noesis.dll"), NoesisDllPath, StagedFileType.NonUFS);
+			}
+			else
+			{
+				RuntimeDependencies.Add(Path.Combine(PluginDir, "Noesis.dll"), NoesisDllPath, StagedFileType.NonUFS);
+			}
 
 			// Editor-only Noesis
 			if (Target.Type == TargetType.Editor)
