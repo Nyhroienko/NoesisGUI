@@ -28,6 +28,7 @@
 
 // Engine includes
 #include "ActiveSound.h"
+#include "Sound/SoundBase.h"
 #include "AudioDevice.h"
 #include "Engine/Texture2D.h"
 #include "UnrealClient.h"
@@ -591,7 +592,7 @@ void NoesisPlaySoundCallback(void* UserData, const Noesis::Uri& Uri, float Volum
 #endif
 
 	FString SoundPath = NsProviderUriToAssetPath(Uri);
-	USoundWave* Sound = LoadObject<USoundWave>(nullptr, *SoundPath, nullptr, LOAD_NoWarn);
+	USoundBase* Sound = LoadObject<USoundBase>(nullptr, *SoundPath, nullptr, LOAD_NoWarn);
 
 	if (!Sound)
 		return;
